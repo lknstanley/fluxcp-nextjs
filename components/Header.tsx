@@ -55,13 +55,15 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
+          <Button
+            variant="ghost"
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
+            onClick={() => router.push("/")}
           >
             FluxCP
-          </Text>
+          </Button>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -111,7 +113,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} alignItems={"center"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -272,17 +274,17 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Check Server Info",
         subLabel: "EXP Rate, Drop Rate and More...",
-        href: "#",
+        href: "info",
       },
       {
         label: "Ranking",
         subLabel: "PvP Ranking, Guild Ranking & MVP Ranking",
-        href: "#",
+        href: "ranking",
       },
       {
         label: "WoE Related",
         subLabel: "WoE Hours, Castles Status",
-        href: "#",
+        href: "woe",
       },
     ],
   },
@@ -308,7 +310,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Donation",
-    href: "#",
+    href: "donate",
   },
   {
     label: "Forum",
