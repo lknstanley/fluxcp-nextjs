@@ -21,9 +21,11 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const router = useRouter();
 
   return (
     <Box>
@@ -73,22 +75,20 @@ export default function WithSubnavigation() {
           spacing={6}
         >
           <Button
-            as={"a"}
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"dashboard"}
+            onClick={() => router.push("/login")}
           >
             Sign In
           </Button>
           <Button
-            as={"a"}
+            onClick={() => router.push("/login")}
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
             bg={"pink.400"}
-            href={"dashboard"}
             _hover={{
               bg: "pink.300",
             }}
