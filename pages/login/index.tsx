@@ -39,9 +39,9 @@ export default function LoginPage() {
           p={8}
         >
           <Stack spacing={4}>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+            <FormControl id="username">
+              <FormLabel>Username</FormLabel>
+              <Input type="username" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
